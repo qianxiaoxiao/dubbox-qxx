@@ -9,7 +9,7 @@
     <dubbo:application name="hello-provider" owner="programmer" organization="dubbox"/>
 
     <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
-
+    
     <dubbo:protocol name="dubbo" serialization="kryo" optimizer="cn.qianxiaoxiao.dubbo.hello.api.SerializationOptimizerImpl"/>
 
     <!-- use tomcat server -->
@@ -17,8 +17,8 @@
                     extension="com.alibaba.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
 
 
-    <dubbo:service interface="cn.qianxiaoxiao.dubbo.hello.api.HelloService" ref="helloService" protocol="dubbo" />
-
+    <dubbo:service interface="cn.qianxiaoxiao.dubbo.hello.api.HelloService" ref="helloService" protocol="rest,dubbo" />
+    
     <bean id="helloService" class="cn.qianxiaoxiao.dubbo.hello.provider.HelloServiceImpl"/>
 
 
